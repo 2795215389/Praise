@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  dubbo:
+    application:
+      name: praise-consumer
+    registry:
+      protocol: zookeeper
+      address: 192.168.87.129:2181
+    protocol:
+      name: dubbo
+      port: 20880
+      host: localhost
+    scan: com.js.main.consumer
+#slf4日志配置
+logging:
+  #配置级别
+  #分包配置级别，即不同的目录下可以使用不同的级别
+  level:
+    com: debug
+
+  #在不指定路径，只指定输出日志文件名，默认输出至当前目录
+  #若指定，则输出到指定目录
+  file:
+    name: log/praise.log
